@@ -1,0 +1,34 @@
+*{
+    box-sizing: border-box;
+}
+.contenar{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width:767px)
+{
+    .contenar{
+        width: 750px;
+    }
+}
+@media (min-width:992px)
+{
+    .contenar{
+        width: 970px;
+    }
+}
+@media (max-width:1200px){
+    .contenar{
+        width: 1170px;
+    }
+}
+/* start header */
+.header{
+    padding: 20px;
+}
+.header img{
+    width: 60px;
+}
+/* end header */
