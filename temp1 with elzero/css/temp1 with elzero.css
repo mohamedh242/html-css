@@ -235,51 +235,74 @@ ul li:not(:last-child) {
     margin-top: 100px;
 }
 
-.col img {
+.imge {
     text-align: center;
     position: relative;
-    width: 260px;
-    background-color: #2c4755;
 }
 
+.imge::before {
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.imge img {
+    width: 260px;
+}
 
 @media (max-width: 1199px) {
     .imge {
         display: none;
     }
+
+}
+
+@media (max-width: 768px) {
+
+    .se1,
+    .se2,
+    .se3,
+    .se4 {
+        flex-direction: column;
+        text-align: center !important;
+    }
+
+}
+
+.se {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
 }
 
 .se1,
 .se2,
 .se3,
 .se4 {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: repeat(2, auto);
-    grid-template-areas: "i h3" "0 p";
+    display: flex;
+    text-align: left;
+
+    margin-bottom: 40px;
 }
 
-.se1 i,
-.se2 i,
-.se3 i,
-.se4 i {
-    grid-area: i;
+.text {
+    flex: 1;
 }
 
-.se1 h3,
-.se2 h3,
-.se3 h3,
-.se4 h3 {
-    grid-area: h3;
-    transform: translateX(30px);
+.text h3 {
+    margin: 0 0 20px;
 }
 
-.se1 p,
-.se2 p,
-.se3 p,
-.se4 p {
-    grid-area: p;
-    transform: translateX(30px);
+.text p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 .fa-brands,
@@ -287,7 +310,170 @@ ul li:not(:last-child) {
     font-weight: 400;
     font-size: 50px;
     color: var(--color-one);
+    flex-basis: 60px;
 }
 
 
 /* end services */
+/* start about */
+.about {
+    background-color: #f6f6f6;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.ab {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 100px;
+
+}
+
+.ab1 {
+    background-color: white;
+}
+
+.ab img {
+    width: 100%;
+}
+
+.bigab {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.smallab {
+    padding: 0 20px 20px;
+    color: var(--small-text-color);
+}
+
+/* end about */
+/* start portfolio */
+.portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding) + 60px);
+}
+
+.portfolio .po {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+@media (max-width: 991px)  {
+    .po{
+    flex-direction: column;
+    text-align: center;
+}
+}
+@media (max-width: 991px){
+.im {
+    margin: 0 auto 60px;
+}
+}
+.im::after{
+    content: "";
+    width: 100px;
+    height: calc(100% );
+    border-left: 100px solid var(--color-one);
+    border-bottom: 70px solid var(--color-one);
+    position: absolute;
+    top: -40px;
+    z-index: -1;
+    left: 175px;
+}
+.im::before{
+    content: "";
+    /* width: 100%; */
+    height: calc(100% + 80px );
+    border-left: 100px solid var(--small-text-color);
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+.contenar .im  {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+.im img{
+    max-width: 100%;
+}
+.po1 {
+    font-weight: bold;
+    line-height: 2;
+    margin-bottom: 50px;
+    flex-basis: calc(100% - 500px);
+}
+.po1 hr {
+    width: 50%;
+    display: inline-block;
+    border-color: var(--main-color);
+}
+.po1 p:nth-child(3){
+    color: var(--small-text-color);
+}
+/* end portfolio */
+/* start contact */
+.contact{
+    padding-top: var(--section-padding);
+    padding-bottom: calc(var(--section-padding));
+    background-color: #f6f6f6;
+    text-align: center;
+}
+.contact .head-text{
+    margin-bottom: 50px;
+}
+.textc{
+    padding: 50px;
+    line-height: 1.6;
+}
+.textc .text1{
+    font-size: 40px;
+    word-spacing: -5px;
+    color: var(--secondary-color);
+}
+.textc .text2 a{
+    text-decoration: none;
+    font-size: 50px;
+    color: var(--color-one);
+}
+.textc .text3 i{
+    font-size: 20px;
+    letter-spacing: 5px;
+    padding-left: 5px;
+}
+@media (max-width: 767px){
+.head-text .big-text {
+    font-size: 60px;
+}
+}
+@media (max-width: 767px){
+.head-text .small-text {
+    margin-top: -20px;
+}
+}
+@media (max-width: 767px){
+.textc .text2 ,
+.textc .text1 a {
+    font-size: 25px;
+}
+}
+/* end contact */
+/* start footer */
+
+.footer{
+    background-color: var(--secondary-color);
+    padding: 30px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+.textf span{
+    color: #10cab7;
+}
+/* end footer */
