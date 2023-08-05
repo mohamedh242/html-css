@@ -395,6 +395,16 @@ ul li:not(:last-child) {
     left: -20px;
     z-index: -1;
 }
+@media (max-width: 767px){
+    .im::after{
+        content: "";
+        display: none;
+    }
+    .im::before{
+        content: "";
+        display: none;
+    }
+}
 .contenar .im  {
     position: relative;
     width: 250px;
@@ -461,6 +471,10 @@ ul li:not(:last-child) {
 .textc .text2 ,
 .textc .text1 a {
     font-size: 25px;
+}
+.textc .text1{
+    font-size: 20px;
+    word-spacing: 2px;
 }
 }
 /* end contact */
