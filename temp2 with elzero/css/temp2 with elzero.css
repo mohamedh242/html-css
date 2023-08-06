@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -12,7 +14,26 @@
     margin-left: auto;
     margin-right: auto;
 }
+/* Small */
+@media (min-width: 768px) {
+    .main {
+        width: 750px;
+    }
+}
 
+/* Medium */
+@media (min-width: 992px) {
+    .main {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .main {
+        width: 1170px;
+    }
+}
 /* start first */
 .first {
     background-image: url(../img/landing.jpg);
@@ -63,7 +84,7 @@ a:hover .header {
 
 .first-text {
     position: absolute;
-    left: 0;
+    left: -50px;
     transform: translateY(80px);
     height: 350%;
     width: 600px;
@@ -213,3 +234,71 @@ a:hover .header {
 }
 
 /* end first */
+/* start secound */
+.secound{
+    padding: 100px 0px;
+}
+.big-se{
+    font-size: 40px;
+    position: relative;
+    font-family: var(--main-font);
+    margin-bottom: 70px;
+    text-align: center;
+}
+.big-se::after{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid black;
+    bottom: -40px;
+    left: 50%;
+    z-index: 2;
+}
+.big-se::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: black;
+    left: 46%;
+    bottom: -30px;
+}
+@media (max-width:767px){
+    .big-se::before{
+        content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: black;
+    left: 300px;
+    bottom: -30px;
+    }
+}
+.small-se{
+    width: 500px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+    text-align: center;
+}
+.secound .secound-text{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 60px;
+}
+.one{
+    display: flex;
+}
+.secound-text .one .img i{
+    margin-right: 50px;
+}
+.one h3{
+    margin-bottom: 30px;
+    color: #19c8fa;
+}
+/* end secound */
